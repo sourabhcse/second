@@ -8,6 +8,7 @@ const path=require('path');
 //console.log(routes.text);
 
 const app=express();
+//hello
 
 const adminRoutes=require('./routes/admin.js');
 
