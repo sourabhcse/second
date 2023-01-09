@@ -9,6 +9,10 @@ const rootDir=require('../util/path');
     
 });*/
 const productsController=require('../controllers/products');
-router.get('/',productsController.getProduct);
+
+router.get('/contactus',productsController.contactus);
+
+router.post('/contactus',productsController.postcontact);
+
 
 module.exports=router;

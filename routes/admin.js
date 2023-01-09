@@ -1,6 +1,6 @@
 const express=require('express');
 const router=express.Router();
-const path=require('path');
+//const path=require('path');
 /*const fs=require('fs');
 
 //same routing add-roduct but differt method GET
@@ -33,17 +33,11 @@ router.post("/",(req,res)=>{
     );
 
 });*/
+const productsController=require('../controllers/products');
 
-const rootDir=require('../util/path');
-router.get('/add-product',(req,res,next)=>{
-    //console.log("in the middleware");
-    res.sendFile(path.join(rootDir,'views','add-product.html'));
+//const rootDir=require('../util/path');
+router.get('/add-product',productsController.getAddProduct);
 
-});
-
-router.post('/product',(req,res,next)=>{
-    console.log(req.body);
-    res.redirect('/');
-});
+router.post('/product',productsController.postAddProduct);
 
 module.exports=router;
