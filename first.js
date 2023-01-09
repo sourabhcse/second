@@ -15,6 +15,7 @@ const adminRoutes=require('./routes/admin.js');
 const shopRoutes =require('./routes/shop.js')
 
 app.use(bodyParser.urlencoded({extended:false}));
+app.use(express.static(path.join(__dirname,'public')));
 
 // "/admin is ignored in the path"
 app.use(adminRoutes);
